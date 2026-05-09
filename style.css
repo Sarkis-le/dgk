@@ -767,11 +767,100 @@
     padding-top: 70px;
   }
 
+  .categories-section {
+    background: var(--dark2);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+  }
+
+  .category-card {
+    min-height: 108px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.14);
+    border-radius: 6px;
+    color: var(--white);
+    padding: 22px;
+    text-decoration: none;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .category-card:hover {
+    transform: translateY(-4px);
+    background: rgba(201,168,76,0.1);
+    border-color: rgba(201,168,76,0.42);
+  }
+
+  .category-card i {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(201,168,76,0.12);
+    color: var(--gold);
+    font-size: 1.25rem;
+  }
+
+  .category-card span {
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .category-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+
+  .category-empty {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 6px;
+    padding: 56px 24px;
+    text-align: center;
+  }
+
+  .category-empty i {
+    display: block;
+    color: var(--gold);
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .category-empty h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+  }
+
+  .category-empty p {
+    color: rgba(245,243,238,0.58);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
   .catalogue-toolbar {
     display: grid;
-    grid-template-columns: minmax(260px, 420px) 1fr;
+    grid-template-columns: minmax(260px, 360px) 1fr;
     gap: 20px;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 26px;
   }
 
@@ -807,6 +896,9 @@
     gap: 10px;
     justify-content: flex-end;
     flex-wrap: wrap;
+    max-height: 152px;
+    overflow-y: auto;
+    padding-right: 4px;
   }
 
   .filter-btn {
