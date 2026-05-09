@@ -521,7 +521,33 @@
   }
 
   /* ── WHY ── */
-  .why { background: var(--dark2); }
+  .why {
+    background:
+      linear-gradient(135deg, rgba(201,168,76,0.09), transparent 28%),
+      linear-gradient(315deg, rgba(66,153,225,0.08), transparent 34%),
+      var(--dark2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why::before {
+    content: '';
+    position: absolute;
+    inset: -72px;
+    background-image:
+      linear-gradient(115deg, transparent 0%, rgba(201,168,76,0.12) 45%, transparent 58%),
+      linear-gradient(rgba(201,168,76,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.045) 1px, transparent 1px);
+    background-size: 220% 100%, 72px 72px, 72px 72px;
+    opacity: 0.75;
+    animation: whySweep 5.8s ease-in-out infinite, whyGridMove 18s linear infinite;
+    pointer-events: none;
+  }
+
+  .why > * {
+    position: relative;
+    z-index: 1;
+  }
 
   .why-grid {
     display: grid;
@@ -537,7 +563,16 @@
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    transform-origin: left center;
   }
+
+  .why-item.visible {
+    animation: whyItemPop 0.8s cubic-bezier(.18,1.35,.34,1) both;
+  }
+
+  .why-item:nth-child(2).visible { animation-delay: 0.1s; }
+  .why-item:nth-child(3).visible { animation-delay: 0.2s; }
+  .why-item:nth-child(4).visible { animation-delay: 0.3s; }
 
   .why-icon {
     width: 48px;
@@ -550,6 +585,24 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 rgba(201,168,76,0);
+    animation: whyIconPulse 2.4s ease-in-out infinite;
+  }
+
+  .why-icon::before {
+    content: '';
+    position: absolute;
+    inset: -40%;
+    background: conic-gradient(from 0deg, transparent, rgba(201,168,76,0.65), transparent 35%);
+    animation: whyIconSpin 3.4s linear infinite;
+  }
+
+  .why-icon i {
+    position: relative;
+    z-index: 1;
   }
 
   .why-text h4 {
@@ -566,25 +619,49 @@
   }
 
   .why-visual {
-    background: var(--dark3);
+    background:
+      linear-gradient(145deg, rgba(28,28,42,0.94), rgba(18,18,26,0.92)),
+      var(--dark3);
     border: 1px solid rgba(201,168,76,0.15);
     border-radius: 8px;
     padding: 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 28px 90px rgba(0,0,0,0.45);
+    animation: whyVisualFloat 4.5s ease-in-out infinite;
   }
 
   .why-visual::before {
     content: '';
     position: absolute;
-    top: -60px; right: -60px;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
-    border-radius: 50%;
+    inset: -2px;
+    background:
+      linear-gradient(120deg, transparent, rgba(201,168,76,0.38), transparent 42%),
+      linear-gradient(150deg, transparent 0%, rgba(201,168,76,0.16) 48%, transparent 70%);
+    background-size: 240% 100%, 100% 100%;
+    opacity: 0.78;
+    animation: whyCardShine 3.8s ease-in-out infinite;
+    pointer-events: none;
   }
 
-  .why-visual-icon { font-size: 5rem; margin-bottom: 20px; }
+  .why-visual::after {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(201,168,76,0.16);
+    border-radius: 6px;
+    pointer-events: none;
+    animation: whyFramePulse 2.8s ease-in-out infinite;
+  }
+
+  .why-visual-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: whyBookBeat 2.2s ease-in-out infinite;
+  }
 
   .why-visual h3 {
     font-family: 'Playfair Display', serif;
@@ -592,12 +669,23 @@
     font-weight: 700;
     color: var(--gold);
     margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 28px rgba(201,168,76,0.34);
   }
 
   .why-visual p {
     font-size: 0.9rem;
     color: rgba(245,243,238,0.55);
     line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-visual .btn-primary {
+    position: relative;
+    z-index: 1;
+    animation: whyCtaPulse 2.1s ease-in-out infinite;
   }
 
   /* ── TESTIMONIALS ── */
@@ -754,9 +842,104 @@
     }
   }
 
+  @keyframes whySweep {
+    0%, 100% { background-position: 140% 0, 0 0, 0 0; }
+    50% { background-position: -70% 0, 36px 36px, 36px 36px; }
+  }
+
+  @keyframes whyGridMove {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(72px, 72px, 0); }
+  }
+
+  @keyframes whyItemPop {
+    0% {
+      opacity: 0;
+      transform: translateX(-72px) scale(0.92) rotate(-2deg);
+      filter: blur(8px);
+    }
+    62% {
+      opacity: 1;
+      transform: translateX(8px) scale(1.035) rotate(0.7deg);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1) rotate(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes whyIconPulse {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      box-shadow: 0 0 0 rgba(201,168,76,0);
+    }
+    50% {
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 0 26px rgba(201,168,76,0.35);
+    }
+  }
+
+  @keyframes whyIconSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes whyVisualFloat {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.45);
+    }
+    50% {
+      transform: translateY(-12px) scale(1.015);
+      box-shadow: 0 38px 120px rgba(201,168,76,0.16), 0 28px 90px rgba(0,0,0,0.5);
+    }
+  }
+
+  @keyframes whyCardShine {
+    0%, 100% { background-position: 160% 0, 0 0; opacity: 0.48; }
+    50% { background-position: -80% 0, 0 0; opacity: 0.9; }
+  }
+
+  @keyframes whyFramePulse {
+    0%, 100% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(0.975);
+    }
+  }
+
+  @keyframes whyBookBeat {
+    0%, 100% {
+      transform: translateY(0) rotate(0) scale(1);
+      text-shadow: 0 0 0 rgba(245,243,238,0);
+    }
+    50% {
+      transform: translateY(-8px) rotate(-2deg) scale(1.08);
+      text-shadow: 0 0 30px rgba(245,243,238,0.42);
+    }
+  }
+
+  @keyframes whyCtaPulse {
+    0%, 100% { box-shadow: 0 0 0 rgba(201,168,76,0); }
+    50% { box-shadow: 0 0 32px rgba(201,168,76,0.35); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-grid,
-    .hero-grid::after {
+    .hero-grid::after,
+    .why::before,
+    .why-item.visible,
+    .why-icon,
+    .why-icon::before,
+    .why-visual,
+    .why-visual::before,
+    .why-visual::after,
+    .why-visual-icon,
+    .why-visual .btn-primary {
       animation: none;
     }
   }
