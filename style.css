@@ -45,14 +45,20 @@
   }
 
   .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: 0.05em;
-    color: var(--gold);
+    width: 170px;
+    height: 52px;
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
   }
 
-  .nav-logo span { color: var(--white); }
+  .nav-logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
 
   .nav-links { display: flex; gap: 36px; }
   .nav-links a {
@@ -772,6 +778,10 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
+    .nav-logo {
+      width: 132px;
+      height: 42px;
+    }
     .nav-toggle { display: flex; }
     .nav-links {
       position: absolute;
