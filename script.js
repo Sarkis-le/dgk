@@ -28,3 +28,43 @@
     });
   }, { threshold: 0.5 });
   counters.forEach(c => cObserver.observe(c));
+
+  // Catalogue search and filters
+  const catalogueSearch = document.querySelector('#catalogueSearch');
+  const catalogueCards = [...document.querySelectorAll('.catalogue-card')];
+  const filterButtons = [...document.querySelectorAll('.filter-btn')];
+  const catalogueCount = document.querySelector('#catalogueCount');
+  const catalogueEmpty = document.querySelector('#catalogueEmpty');
+  let activeFilter = 'all';
+
+  const updateCatalogue = () => {
+    const query = (catalogueSearch?.value || '').trim().toLowerCase();
+    let visibleCount = 0;
+
+    catalogueCards.forEach(card => {
+      const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+      const matchesSearch = !query || (card.dataset.title || '').includes(query);
+      const isVisible = matchesFilter && matchesSearch;
+
+      card.classList.toggle('is-hidden', !isVisible);
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (catalogueCount) {
+      const label = visibleCount > 1 ? 'ressources disponibles' : 'ressource disponible';
+      catalogueCount.textContent = `${visibleCount} ${label}`;
+    }
+
+    catalogueEmpty?.classList.toggle('is-visible', visibleCount === 0);
+  };
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter || 'all';
+      filterButtons.forEach(btn => btn.classList.toggle('active', btn === button));
+      updateCatalogue();
+    });
+  });
+
+  catalogueSearch?.addEventListener('input', updateCatalogue);
+  if (catalogueCards.length) updateCatalogue();

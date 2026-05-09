@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue DGK-SERVICES | Ebooks & Services</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="catalogue-page">
+
+<nav>
+  <a href="index.html" class="nav-logo">DGK<span>-SERVICES</span></a>
+  <div class="nav-links">
+    <a href="catalogue.html">Catalogue</a>
+    <a href="index.html#pourquoi">Pourquoi nous</a>
+    <a href="index.html#avis">Avis</a>
+    <a href="https://ztczgngl.mychariow.shop" target="_blank" class="nav-cta">Boutique</a>
+  </div>
+</nav>
+
+<main>
+  <section class="catalogue-hero">
+    <div class="catalogue-hero-bg"></div>
+    <div class="catalogue-hero-content reveal">
+      <div class="section-label">Catalogue DGK-SERVICES</div>
+      <h1>Choisissez votre prochaine <em>ressource premium</em></h1>
+      <p class="hero-sub">Explorez nos ebooks et services professionnels par th&egrave;me. Chaque ressource est pens&eacute;e pour vous aider &agrave; apprendre plus vite, agir avec clart&eacute; et progresser concr&egrave;tement.</p>
+      <div class="catalogue-summary">
+        <div><strong>10+</strong><span>ressources</span></div>
+        <div><strong>6</strong><span>cat&eacute;gories</span></div>
+        <div><strong>PDF</strong><span>acc&egrave;s rapide</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalogue-panel" id="catalogue">
+    <div class="catalogue-toolbar reveal">
+      <label class="catalogue-search">
+        <i class="bi bi-search"></i>
+        <input type="search" id="catalogueSearch" placeholder="Rechercher un ebook, un sujet...">
+      </label>
+
+      <div class="catalogue-filters" aria-label="Filtres du catalogue">
+        <button class="filter-btn active" type="button" data-filter="all">Tous</button>
+        <button class="filter-btn" type="button" data-filter="business">Business</button>
+        <button class="filter-btn" type="button" data-filter="tech">Tech & IA</button>
+        <button class="filter-btn" type="button" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" type="button" data-filter="bien-etre">Bien-&ecirc;tre</button>
+        <button class="filter-btn" type="button" data-filter="creation">Cr&eacute;ation</button>
+      </div>
+    </div>
+
+    <div class="catalogue-results reveal">
+      <span id="catalogueCount">10 ressources disponibles</span>
+      <a href="https://ztczgngl.mychariow.shop" target="_blank">Voir la boutique Chariow <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+
+    <div class="catalogue-grid">
+      <article class="catalogue-card reveal" data-category="business" data-title="entrepreneuriat moderne business finance">
+        <div class="catalogue-cover bc1"><i class="bi bi-graph-up-arrow"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Business & Finance</div>
+          <h2>Ma&icirc;triser l'Entrepreneuriat Moderne</h2>
+          <p>Un guide clair pour structurer une id&eacute;e, lancer une activit&eacute; et prendre de meilleures d&eacute;cisions.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>PDF premium</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="business" data-title="finance personnelle argent budget investissement">
+        <div class="catalogue-cover bc6"><i class="bi bi-wallet2"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Finance Personnelle</div>
+          <h2>Organiser son Argent avec M&eacute;thode</h2>
+          <p>Des bases simples pour mieux g&eacute;rer son budget, suivre ses objectifs et construire une discipline financi&egrave;re.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Plan d'action</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="tech" data-title="intelligence artificielle ia technologie productivite">
+        <div class="catalogue-cover bc3"><i class="bi bi-cpu"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Technologie & IA</div>
+          <h2>Intelligence Artificielle pour Tous</h2>
+          <p>Comprendre les usages essentiels de l'IA et l'int&eacute;grer intelligemment dans son travail quotidien.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Cas pratiques</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="tech" data-title="outils numeriques automatisation productivite web">
+        <div class="catalogue-cover bc5"><i class="bi bi-laptop"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Outils Num&eacute;riques</div>
+          <h2>Travailler Plus Vite avec les Bons Outils</h2>
+          <p>Une s&eacute;lection de m&eacute;thodes et d'outils pour gagner du temps sans perdre en qualit&eacute;.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Workflow</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="marketing" data-title="marketing digital reseaux sociaux vente strategie">
+        <div class="catalogue-cover bc2"><i class="bi bi-megaphone"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Marketing Digital</div>
+          <h2>Strat&eacute;gies Marketing 2025</h2>
+          <p>Construire une pr&eacute;sence en ligne lisible, attirer les bons clients et mieux convertir son audience.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Strat&eacute;gie</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="marketing" data-title="vente persuasion client offre business">
+        <div class="catalogue-cover bc1"><i class="bi bi-bag-check"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Vente & Offre</div>
+          <h2>Cr&eacute;er une Offre qui Donne Envie</h2>
+          <p>Clarifier sa proposition, pr&eacute;senter sa valeur et faciliter la d&eacute;cision d'achat.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Mod&egrave;les inclus</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="bien-etre" data-title="productivite discipline developpement personnel habitudes">
+        <div class="catalogue-cover bc4"><i class="bi bi-lightning-charge"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">D&eacute;veloppement Personnel</div>
+          <h2>L'Art de la Productivit&eacute; Maximale</h2>
+          <p>Organiser ses journ&eacute;es, prot&eacute;ger son attention et transformer ses objectifs en actions r&eacute;alistes.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>M&eacute;thode simple</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="bien-etre" data-title="sante bien etre equilibre mental energie">
+        <div class="catalogue-cover bc3"><i class="bi bi-heart-pulse"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Sant&eacute; & Bien-&ecirc;tre</div>
+          <h2>Guide Complet du Bien-&ecirc;tre Holistique</h2>
+          <p>Des rep&egrave;res pratiques pour mieux prendre soin de son corps, de son mental et de son &eacute;nergie.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Routine guid&eacute;e</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="creation" data-title="design thinking innovation creativite projet">
+        <div class="catalogue-cover bc5"><i class="bi bi-palette"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Cr&eacute;ativit&eacute; & Design</div>
+          <h2>Design Thinking & Innovation</h2>
+          <p>Passer d'une id&eacute;e floue &agrave; une solution utile gr&acirc;ce &agrave; une m&eacute;thode de cr&eacute;ation structur&eacute;e.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Ateliers</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+
+      <article class="catalogue-card reveal" data-category="creation" data-title="contenu branding image marque reseaux sociaux">
+        <div class="catalogue-cover bc2"><i class="bi bi-brush"></i></div>
+        <div class="catalogue-card-body">
+          <div class="book-tag">Branding & Contenu</div>
+          <h2>B&acirc;tir une Image de Marque Claire</h2>
+          <p>D&eacute;finir une identit&eacute; coh&eacute;rente, mieux communiquer et rendre ses contenus plus reconnaissables.</p>
+          <div class="catalogue-meta"><span>30 pages</span><span>Checklist</span></div>
+          <a href="https://ztczgngl.mychariow.shop" target="_blank" class="book-btn">Acheter</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="catalogue-empty" id="catalogueEmpty">
+      <i class="bi bi-search"></i>
+      <h2>Aucun r&eacute;sultat trouv&eacute;</h2>
+      <p>Essayez un autre mot-cl&eacute; ou revenez au filtre "Tous".</p>
+    </div>
+  </section>
+
+  <section class="catalogue-cta">
+    <div class="reveal">
+      <div class="section-label">Besoin de tout voir ?</div>
+      <div class="section-title">La boutique compl&egrave;te est sur <em>Chariow</em></div>
+      <p class="section-sub">Retrouvez les ressources disponibles, les prix et les options d'achat directement sur la boutique officielle DGK-SERVICES.</p>
+      <a href="https://ztczgngl.mychariow.shop" target="_blank" class="btn-primary"><i class="bi bi-cart"></i> Ouvrir la boutique</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo">DGK-SERVICES</div>
+  <div class="footer-copy">&copy; 2026 DGK-Services &middot; Boutique disponible sur Chariow</div>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="https://ztczgngl.mychariow.shop" target="_blank">Chariow</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
