@@ -1,4 +1,27 @@
 // Reveal on scroll
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+
+  navToggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('is-open') || false;
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    const icon = navToggle.querySelector('i');
+    icon?.classList.toggle('bi-list', !isOpen);
+    icon?.classList.toggle('bi-x-lg', isOpen);
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('is-open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-label', 'Ouvrir le menu');
+      const icon = navToggle?.querySelector('i');
+      icon?.classList.add('bi-list');
+      icon?.classList.remove('bi-x-lg');
+    });
+  });
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
