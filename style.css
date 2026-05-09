@@ -115,6 +115,22 @@
       linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
+    opacity: 0.85;
+    animation: heroGridDrift 18s linear infinite, heroGridGlow 7s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .hero-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(240,208,128,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240,208,128,0.08) 1px, transparent 1px);
+    background-size: 180px 180px;
+    -webkit-mask-image: radial-gradient(circle at 68% 42%, #000 0%, transparent 58%);
+    mask-image: radial-gradient(circle at 68% 42%, #000 0%, transparent 58%);
+    animation: heroGridSweep 12s ease-in-out infinite;
   }
 
   .hero-content {
@@ -686,6 +702,34 @@
   @keyframes fadeLeft {
     from { opacity: 0; transform: translateX(40px); }
     to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes heroGridDrift {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 60px 60px, 60px 60px; }
+  }
+
+  @keyframes heroGridGlow {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes heroGridSweep {
+    0%, 100% {
+      opacity: 0.18;
+      transform: translate3d(-24px, 18px, 0) scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: translate3d(28px, -18px, 0) scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-grid,
+    .hero-grid::after {
+      animation: none;
+    }
   }
 
   .reveal {
