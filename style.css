@@ -442,6 +442,39 @@
   }
   .book-btn:hover { background: var(--gold); color: var(--dark); }
 
+  .home-category-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    min-height: 150px;
+    padding: 22px;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .home-category-card .book-info {
+    padding: 0;
+  }
+
+  .home-category-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 4px;
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+    font-size: 1.35rem;
+  }
+
+  .home-category-card .book-meta {
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
   /* ── WHY ── */
   .why { background: var(--dark2); }
 
