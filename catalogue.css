@@ -397,6 +397,9 @@
   .catalogue-toolbar { grid-template-columns: 1fr; }
   .catalogue-filters { justify-content: flex-start; }
   .catalogue-results { align-items: flex-start; flex-direction: column; }
-  .catalogue-grid { grid-template-columns: minmax(0, 260px); }
-  .catalogue-card { max-width: 260px; }
+  .catalogue-grid { grid-template-columns: 1fr; }
+  .catalogue-card {
+    width: 100%;
+    max-width: none;
+  }
 }
