@@ -269,6 +269,25 @@
   display: none;
 }
 
+.product-thumb {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #050914;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.catalogue-card:hover .product-thumb img {
+  transform: scale(1.035);
+}
+
 .catalogue-cover {
   height: 180px;
   display: flex;
