@@ -45,19 +45,42 @@
   }
 
   .nav-logo {
-    width: 170px;
-    height: 52px;
-    display: block;
-    overflow: hidden;
-    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    text-decoration: none;
   }
 
   .nav-logo img {
-    width: 100%;
-    height: 100%;
+    width: 48px;
+    height: 48px;
     display: block;
     object-fit: cover;
     object-position: center;
+    border-radius: 4px;
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+  }
+
+  .nav-logo-subtitle {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: rgba(245,243,238,0.82);
   }
 
   .nav-links { display: flex; gap: 36px; }
@@ -778,9 +801,15 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
-    .nav-logo {
-      width: 132px;
-      height: 42px;
+    .nav-logo { gap: 9px; }
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+    }
+    .nav-logo-title { font-size: 1.15rem; }
+    .nav-logo-subtitle {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
     }
     .nav-toggle { display: flex; }
     .nav-links {
